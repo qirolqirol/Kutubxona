@@ -11,6 +11,6 @@ root.render(
   </React.StrictMode>
 );
 
-// Agar xohlaysiz, performansni o‘lchash uchun
+
 reportWebVitals();
             
