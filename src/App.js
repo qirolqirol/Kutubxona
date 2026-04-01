@@ -7,7 +7,7 @@ function App() {
   const [category, setCategory] = useState("home");
   const [favorites, setFavorites] = useState([]);
 
-  // FILTER + SEARCH
+ 
   const filteredBooks = booksData.filter((book) => {
     const matchSearch = book.title.toLowerCase().includes(search.toLowerCase());
 
@@ -19,7 +19,7 @@ function App() {
     return book.category === category && matchSearch;
   });
 
-  // FAVORITE TOGGLE
+  
   const toggleFavorite = (book) => {
     setFavorites((prev) =>
       prev.some((b) => b.id === book.id)
@@ -30,11 +30,11 @@ function App() {
 
   return (
     <div>
-      {/* NAVBAR */}
+     
       <header className="navbar">
         <h1 className="logo">📚 Onlayn Kutubxona</h1>
 
-        {/* MENU */}
+        
         <nav className="menu">
           <span
             className={category === "home" ? "menu-item active" : "menu-item"}
@@ -64,7 +64,7 @@ function App() {
           </span>
         </nav>
 
-        {/* SEARCH */}
+       
         <input
           type="text"
           className="search-input"
@@ -74,7 +74,7 @@ function App() {
         />
       </header>
 
-      {/* BOOK LIST */}
+      
       <div className="container">
         {filteredBooks.length === 0 ? (
           <p style={{ textAlign: "center", width: "100%" }}>
@@ -87,7 +87,7 @@ function App() {
               key={book.id}
               onClick={() => window.open(book.link)}
             >
-              {/* HEART */}
+            
               <div
                 className="heart"
                 onClick={(e) => {
